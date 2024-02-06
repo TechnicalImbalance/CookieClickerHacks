@@ -51,11 +51,11 @@
                 clickCookie(times, ms)
             })
 
-            document.getElementById('winAllAchievements').addEventListener('click', winAllAchievements());
-            document.getElementById('unlockAllUpgrades').addEventListener('click', unlockAllUpgrades());
-            document.getElementById('buyAllUpgradesButton').addEventListener('click', buyAllUpgrades());
-            document.getElementById('getFreeAllUpgradesButton').addEventListener('click', buyAllUpgradesFree());
-            document.getElementById('sellAll').addEventListener('click', sellAllObjects());
+            document.getElementById('winAllAchievements').addEventListener('click', () => {winAllAchievements()});
+            document.getElementById('unlockAllUpgrades').addEventListener('click', () => {unlockAllUpgrades()});
+            document.getElementById('buyAllUpgradesButton').addEventListener('click', () => {buyAllUpgrades()});
+            document.getElementById('getFreeAllUpgradesButton').addEventListener('click', () => {buyAllUpgradesFree()});
+            document.getElementById('sellAll').addEventListener('click', () => {sellAllObjects()});
 			
 			function getHackDialogHTML() {
 				return `<h3>Hacks</h3><div><button id="buyFree">Buy <input id="buyFreeAmount"> of all for free</button</div><div><button id="buyAll">Buy <input id="buyAllAmount"> of all for money</button></div><div><button id="setBasePrice">Set base price of all objects to <input id="basePriceAmount"></button></div><div><button id="clickCookieButton">Click the cookie <input id="clickCookieTimes"> times, with every click being spaced <input id="clickCookieDelay"> milliseconds</button></div><div><button id='winAllAchievements'>Win all achievements</button></div><div><button id="unlockAllUpgrades">Unlock all upgrades</button></div><div><button id="buyAllUpgradesButton">Buy all upgrades with money</button></div><div><button id="getFreeAllUpgradesButton">Get all upgrades for free</button></div><div><button id="sellAll">Sell every bought object</button></div><button id="closeHackDialogButton">Close</button>`

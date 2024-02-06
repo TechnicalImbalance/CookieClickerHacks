@@ -83,11 +83,11 @@
                 clickCookie(times, ms)
             })
 
-            document.getElementById('winAllAchievements').addEventListener('click', winAllAchievements());
-            document.getElementById('unlockAllUpgrades').addEventListener('click', unlockAllUpgrades());
-            document.getElementById('buyAllUpgradesButton').addEventListener('click', buyAllUpgrades());
-            document.getElementById('getFreeAllUpgradesButton').addEventListener('click', buyAllUpgradesFree());
-            document.getElementById('sellAll').addEventListener('click', sellAllObjects());
+            document.getElementById('winAllAchievements').addEventListener('click', () => {winAllAchievements()});
+            document.getElementById('unlockAllUpgrades').addEventListener('click', () => {unlockAllUpgrades()});
+            document.getElementById('buyAllUpgradesButton').addEventListener('click', () => {buyAllUpgrades()});
+            document.getElementById('getFreeAllUpgradesButton').addEventListener('click', () => {buyAllUpgradesFree()});
+            document.getElementById('sellAll').addEventListener('click', () => {sellAllObjects()});
         </script>
     </body>
 </html>
