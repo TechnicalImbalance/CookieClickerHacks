@@ -30,12 +30,14 @@ function unlockAllUpgrades() {
 
 function buyAllUpgradesFree() {
 	for(i = 0; i<Game.UpgradesN; i+=1) {
+		if(!(Game.UpgradesById[i].unlocked === 1)) continue;
 		Game.UpgradesById[i].bought = 1;
 	}
 }
 
 function buyAllUpgrades() {
 	for(i = 0; i<Game.UpgradesN; i+=1) {
+		if(!(Game.UpgradesById[i].unlocked === 1)) continue;
 		Game.UpgradesById[i].buy()
 	}
 }
