@@ -2,17 +2,68 @@
 <html>
 	<body>
 		<h1>Cookie Clicker Hacks</h1>
+		<select name="selectScriptType" id="selectScriptType" autofocus onchange="trep()">
+			<option value="allout">With dialog</option>
+			<option value="ch">Without dialog</option>
+		</select>
 		<button id="getscript">Get script</button>
 		<script>
+            var done = false;
+			var selectList = document.getElementById('selectScriptType')
+			
 			var getscriptButton = document.getElementById("getscript")
 			getscriptButton.addEventListener('click', (e) => {
+                done = true;
+				var txt = "";
+				if(selectList.selectedIndex === 1) {
+					txt = "LoadScript(\"https://cchacks.netlify.app/CCHacks.js\")"
+				} else {
+					txt = "LoadScript(\"https://cchacks.netlify.app/Dialog.js\")"
+				}
 				if(!document.getElementById('scriptline')) {
 					var scriptLine = document.createElement('h5')
-					scriptLine.innerHTML = "LoadScript(\"https://magenta-starship-69ddb5.netlify.app/CookieClickerHacks.js\")"
+					scriptLine.innerHTML = txt
 					scriptLine.id = "scriptline"
 					document.body.appendChild(scriptLine)
+					var newbutton = document.createElement('button')
+					newbutton.id = "copyButton"
+					newbutton.innerHTML = "Copy";
+					newbutton.addEventListener('click', () => {navigator.clipboard.writeText(txt)})
+					document.body.appendChild(newbutton)
+					return;
+				}
+				if(!(document.getElementById('scriptline').innerHTML === txt)) {
+					document.getElementById('scriptline').innerHTML = txt
+                    document.getElementById('copyButton').addEventListener('click', () => {navigator.clipboard.writeText(txt)})
+					return;
 				}
 			})
+            function trep() {
+                if(!done === true) { return;}
+				var txt = "";
+				if(selectList.selectedIndex === 1) {
+					txt = "LoadScript(\"https://cchacks.netlify.app/CCHacks.js\")"
+				} else {
+					txt = "LoadScript(\"https://cchacks.netlify.app/Dialog.js\")"
+				}
+				if(!document.getElementById('scriptline')) {
+					var scriptLine = document.createElement('h5')
+					scriptLine.innerHTML = txt
+					scriptLine.id = "scriptline"
+					document.body.appendChild(scriptLine)
+					var newbutton = document.createElement('button')
+					newbutton.id = "copyButton"
+					newbutton.innerHTML = "Copy";
+					newbutton.addEventListener('click', () => {navigator.clipboard.writeText(txt)})
+					document.body.appendChild(newbutton)
+					return;
+				}
+				if(!(document.getElementById('scriptline').innerHTML === txt)) {
+					document.getElementById('scriptline').innerHTML = txt
+                    document.getElementById('copyButton').addEventListener('click', () => {navigator.clipboard.writeText(txt)})
+					return;
+				}
+			}
 		</script>
 	</body>
 </html>
