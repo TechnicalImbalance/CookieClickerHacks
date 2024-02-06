@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h1>Cookie Clicker Hacks</h1>
+		<button id="getscript">Get script</button>
+		<script>
+			var getscriptButton = document.getElementById("getscript")
+			getscriptButton.addEventListener('click', (e) => {
+				if(!document.getElementById('scriptline')) {
+					var scriptLine = document.createElement('h5')
+					scriptLine.innerHTML = "LoadScript(\"https://magenta-starship-69ddb5.netlify.app/CookieClickerHacks.js\")"
+					scriptLine.id = "scriptline"
+					document.body.appendChild(scriptLine)
+				}
+			})
+		</script>
+	</body>
+</html>
