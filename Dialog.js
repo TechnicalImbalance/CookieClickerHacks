@@ -60,7 +60,7 @@ async function clickCookie(times, ms, debug) {
 	}
 }
 
-function LoadCSS(url,callback,error)
+var LoadCSS=function(url,callback,error)
 {
 	var css=document.createElement('style');
 	css.setAttribute('type','text/css');
@@ -84,10 +84,5 @@ function LoadCSS(url,callback,error)
 	document.head.appendChild(css);
 }
 
-loadIt();
-
-async function loadIt() {
-	LoadCSS("https://cchacks.netlify.app/DialogCSS.css")
-	await sleep(1000)
-	LoadScript("https://cchacks.netlify.app/CookieClickerHackDialog.js")
-}
+LoadCSS("https://cchacks.netlify.app/DialogCSS.css")
+LoadScript("https://cchacks.netlify.app/CookieClickerHackDialog.js")
