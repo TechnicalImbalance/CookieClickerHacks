@@ -84,6 +84,10 @@ function LoadCSS(url,callback,error)
 	document.head.appendChild(css);
 }
 
-LoadCSS("https://cchacks.netlify.app/DialogCSS.css")
-sleep(1000)
-LoadScript("https://cchacks.netlify.app/CookieClickerHackDialog.js")
+loadIt();
+
+async function loadIt() {
+	LoadCSS("https://cchacks.netlify.app/DialogCSS.css")
+	await sleep(1000)
+	LoadScript("https://cchacks.netlify.app/CookieClickerHackDialog.js")
+}
