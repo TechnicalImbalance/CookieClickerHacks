@@ -60,28 +60,14 @@ async function clickCookie(times, ms, debug) {
 	}
 }
 
-var LoadCSS=function(url,callback,error)
+var LoadCSS=function(url)
 {
-	var css=document.createElement('style');
-	css.setAttribute('type','text/css');
-	if (css.readyState){
-		css.onreadystatechange=function()
-		{
-			if (css.readyState==="loaded" || css.readyState==="complete")
-			{
-				css.onreadystatechange=null;
-				if (callback) callback();
-			}
-		};
-	}
-	else if (callback)
-	{
-		css.onload=callback;
-	}
-	if (error) css.onerror=error;
-	
-	css.setAttribute('src',url);
-	document.head.appendChild(css);
+	let head = document.getElementsByTagName('HEAD')[0];
+	let link = document.createElement('link');
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = url;
+	head.appendChild(link);
 }
 
 LoadCSS("https://cchacks.netlify.app/DialogCSS.css")
