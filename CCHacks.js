@@ -60,3 +60,26 @@ async function clickCookie(times, ms, debug) {
 	}
 }
 
+function LoadCSS(url,callback,error)
+{
+	var css=document.createElement('style');
+	css.setAttribute('type','text/css');
+	if (css.readyState){
+		css.onreadystatechange=function()
+		{
+			if (css.readyState==="loaded" || css.readyState==="complete")
+			{
+				css.onreadystatechange=null;
+				if (callback) callback();
+			}
+		};
+	}
+	else if (callback)
+	{
+		css.onload=callback;
+	}
+	if (error) css.onerror=error;
+	
+	css.setAttribute('src',url);
+	document.head.appendChild(css);
+}

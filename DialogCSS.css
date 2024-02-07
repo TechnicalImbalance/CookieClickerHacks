@@ -1,0 +1,48 @@
+.hackbutton1 {
+    color: green;
+    background-color: lightgreen;
+    border: none;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 32px;
+}
+.hackdialog {
+    height: fit-content;
+    border: 0px;
+    border-radius: 20px;
+}
+.hackbutton {
+    border-radius:5px;
+    color: green;
+    background-color: lightgreen;
+    border: none;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-bottom: 1px;
+    opacity: 100%;
+}
+.hacksH1{
+    color: lightgreen;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+    a:link { 
+        text-decoration: none;
+        color: gray;
+        border-color: black;
+        border: 3px;
+    } 
+    a:visited { 
+        text-decoration: none;
+        color: gray;
+        border-color: black;
+        border: 3px;
+    } 
+    a:hover { 
+        text-decoration: underline;
+        color: #0000EE;
+    } 
+    a:active { 
+        text-decoration: underline;
+        color: #0000EE;
+    }
+}

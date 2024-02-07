@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <button id="openHackDialogButton">Hacks</button>
-        <dialog id="hackDialog">   
-            <h3>Hacks</h3>
+        <button id="openHackDialogButton" class="hackbutton1"><strong>Hacks</strong></button>
+        <dialog id="hackDialog" class="hackdialog">   
+            <h1 class="hacksH1"><a href='https://cchacks.netlify.app' target="_blank" rel="noopener noreferrer">Hacks</a></h1>
             
             <div>
-                <button id="buyFree">Buy <input id="buyFreeAmount"> of all for free</button>
+                <button id="buyFree" class="hackbutton">Buy <input id="buyFreeAmount" class="hackinput"> of all for free</button>
             </div>
             <div>
-                <button id="buyAll">Buy <input id="buyAllAmount"> of all for money</button>
+                <button id="buyAll" class="hackbutton">Buy <input id="buyAllAmount" class="hackinput"> of all for money</button>
             </div>
             <div>
-                <button id="setBasePrice">Set base price of all objects to <input id="basePriceAmount"></button>
+                <button id="setBasePrice" class="hackbutton">Set base price of all objects to <input id="basePriceAmount" class="hackinput"></button>
             </div>
             <div>
-                <button id="clickCookieButton">Click the cookie <input id="clickCookieTimes"> times, with every click being spaced <input id="clickCookieDelay"> milliseconds</button>
+                <button id="clickCookieButton" class="hackbutton">Click the cookie <input id="clickCookieTimes" class="hackinput"> times, with every click being spaced <input id="clickCookieDelay" class="hackinput"> milliseconds</button>
             </div>
             <div>
-                <button id='winAllAchievements'>Win all achievements</button>
+                <button id='winAllAchievements' class="hackbutton">Win all achievements</button>
             </div>
             <div>
-                <button id="unlockAllUpgrades">Unlock all upgrades</button>
+                <button id="unlockAllUpgrades" class="hackbutton">Unlock all upgrades</button>
             </div>
             <div>
-                <button id="buyAllUpgradesButton">Buy all upgrades with money</button>
+                <button id="buyAllUpgradesButton" class="hackbutton">Buy all upgrades with money</button>
             </div>
             <div>
-                <button id="getFreeAllUpgradesButton">Get all upgrades for free</button>
+                <button id="getFreeAllUpgradesButton" class="hackbutton">Get all upgrades for free</button>
             </div>
             <div>
-                <button id="sellAll">Sell every bought object</button>
+                <button id="sellAll" class="hackbutton">Sell every bought object</button>
             </div>
             
-            <button id="closeHackDialogButton">Close</button>
+            <button id="closeHackDialogButton" class="hackbutton">Close</button>
 
         </dialog>
         <script>
@@ -41,7 +41,7 @@
             var hackDialog = document.getElementById('hackDialog')
             var closeHackDialogButton = document.getElementById('closeHackDialogButton')
 
-            var nestedInputs = ['buyFreeAmount','buyAllAmount','setBasePrice','clickCookieTimes','clickCookieDelay']
+            var nestedInputs = ['buyFreeAmount','buyAllAmount','clickCookieTimes','clickCookieDelay', 'basePriceAmount']
 
             openHackDialogButton.addEventListener('click', () => {
                 hackDialog.showModal();
@@ -89,5 +89,58 @@
             document.getElementById('getFreeAllUpgradesButton').addEventListener('click', () => {buyAllUpgradesFree()});
             document.getElementById('sellAll').addEventListener('click', () => {sellAllObjects()});
         </script>
+        <style>
+            .hackbutton1 {
+                color: green;
+                background-color: lightgreen;
+                border: none;
+                padding: 5px 10px;
+                display: inline-block;
+                border-radius: 32px;
+            }
+            .hackdialog {
+                height: fit-content;
+                border: 0px;
+                border-radius: 20px;
+            }
+            .hackbutton {
+                border-radius:5px;
+                color: green;
+                background-color: lightgreen;
+                border: none;
+                padding: 5px 10px;
+                display: inline-block;
+                margin-bottom: 1px;
+                opacity: 100%;
+            }
+            .hacksH1{
+                color: lightgreen;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                letter-spacing: 2px;
+                a:link { 
+                    text-decoration: none;
+                    color: gray;
+                    border-color: black;
+                    border: 3px;
+                } 
+                a:visited { 
+                    text-decoration: none;
+                    color: gray;
+                    border-color: black;
+                    border: 3px;
+                } 
+                a:hover { 
+                    text-decoration: underline;
+                    color: #0000EE;
+                } 
+                a:active { 
+                    text-decoration: underline;
+                    color: #0000EE;
+                }
+            }
+            
+
+            
+        </style>
     </body>
 </html>

@@ -1,15 +1,20 @@
 			var versionNum = document.getElementById('versionNumber');
+
 			var openHackDialogButton = document.createElement("button");
 			openHackDialogButton.innerHTML = "Hacks"
+            openHackDialogButton.className = "hackbutton1"
+            openHackDialogButton.id = "openHackDialogButton";
 			versionNum.appendChild(openHackDialogButton)
-			openHackDialogButton.id = "openHackDialogButton";
+
 			var hackDialog = document.createElement('dialog')
 			hackDialog.id = "hackDialog"
 			hackDialog.innerHTML = getHackDialogHTML()
+            hackDialog.className = "hackdialog"
 			document.body.appendChild(hackDialog)
+
 			var closeHackDialogButton = document.getElementById('closeHackDialogButton')
 
-			var nestedInputs = ['buyFreeAmount','buyAllAmount','setBasePrice','clickCookieTimes','clickCookieDelay']
+			var nestedInputs = ['buyFreeAmount','buyAllAmount','clickCookieTimes','clickCookieDelay', 'basePriceAmount']
 
             openHackDialogButton.addEventListener('click', () => {
                 hackDialog.showModal();
@@ -58,5 +63,35 @@
             document.getElementById('sellAll').addEventListener('click', () => {sellAllObjects()});
 			
 			function getHackDialogHTML() {
-				return `<h3>Hacks</h3><div><button id="buyFree">Buy <input id="buyFreeAmount"> of all for free</button></div><div><button id="buyAll">Buy <input id="buyAllAmount"> of all for money</button></div><div><button id="setBasePrice">Set base price of all objects to <input id="basePriceAmount"></button></div><div><button id="clickCookieButton">Click the cookie <input id="clickCookieTimes"> times, with every click being spaced <input id="clickCookieDelay"> milliseconds</button></div><div><button id='winAllAchievements'>Win all achievements</button></div><div><button id="unlockAllUpgrades">Unlock all upgrades</button></div><div><button id="buyAllUpgradesButton">Buy all upgrades with money</button></div><div><button id="getFreeAllUpgradesButton">Get all upgrades for free</button></div><div><button id="sellAll">Sell every bought object</button></div><button id="closeHackDialogButton">Close</button>`
+				return `<h1 class="hacksH1"><a href='https://cchacks.netlify.app' target="_blank" rel="noopener noreferrer">Hacks</a></h1>
+            
+                <div>
+                    <button id="buyFree" class="hackbutton">Buy <input id="buyFreeAmount" class="hackinput"> of all for free</button>
+                </div>
+                <div>
+                    <button id="buyAll" class="hackbutton">Buy <input id="buyAllAmount" class="hackinput"> of all for money</button>
+                </div>
+                <div>
+                    <button id="setBasePrice" class="hackbutton">Set base price of all objects to <input id="basePriceAmount" class="hackinput"></button>
+                </div>
+                <div>
+                    <button id="clickCookieButton" class="hackbutton">Click the cookie <input id="clickCookieTimes" class="hackinput"> times, with every click being spaced <input id="clickCookieDelay" class="hackinput"> milliseconds</button>
+                </div>
+                <div>
+                    <button id='winAllAchievements' class="hackbutton">Win all achievements</button>
+                </div>
+                <div>
+                    <button id="unlockAllUpgrades" class="hackbutton">Unlock all upgrades</button>
+                </div>
+                <div>
+                    <button id="buyAllUpgradesButton" class="hackbutton">Buy all upgrades with money</button>
+                </div>
+                <div>
+                    <button id="getFreeAllUpgradesButton" class="hackbutton">Get all upgrades for free</button>
+                </div>
+                <div>
+                    <button id="sellAll" class="hackbutton">Sell every bought object</button>
+                </div>
+                
+                <button id="closeHackDialogButton" class="hackbutton">Close</button>`
 			}
