@@ -85,4 +85,5 @@ function LoadCSS(url,callback,error)
 }
 
 LoadCSS("https://cchacks.netlify.app/DialogCSS.css")
+await sleep(1000)
 LoadScript("https://cchacks.netlify.app/CookieClickerHackDialog.js")
