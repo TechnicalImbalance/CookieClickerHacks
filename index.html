@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<style>
+			:root {
+				background-color: black;
+			}
+			.getbutton {
+				color: green;
+                background-color: lightgreen;
+                border: none;
+                padding: 5px 10px;
+                display: inline-block;
+                border-radius: 5px;
+			}
+			.select  {
+				padding: 4px 5px;
+				border: 0;
+				background-color:lightgreen;
+				color: green;
+				border-radius: 5px;
+			}
+			.scriptline {
+				color: green;
+			}
+			.title {
+				color: green;
+				font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+				letter-spacing: 1px;
+				font-style: normal;
+				padding-top: 5px;
+				
+			}
+		</style>
+	</head>
 	<body>
-		<h1>Cookie Clicker Hacks</h1>
-		<select name="selectScriptType" id="selectScriptType" autofocus onchange="trep()">
-			<option value="allout">With dialog</option>
-			<option value="ch">Without dialog</option>
+		<h1 class="title">Cookie Clicker Hacks</h1>
+		<select name="selectScriptType" id="selectScriptType" class="select" autofocus onchange="trep()">
+			<option value="allout" class="option">With dialog</option>
+			<option value="ch" class="option">Without dialog</option>
 		</select>
-		<button id="getscript">Get script</button>
+		<button id="getscript" class="getbutton">Get script</button>
 		<script>
             var done = false;
 			var selectList = document.getElementById('selectScriptType')
@@ -24,10 +57,12 @@
 					var scriptLine = document.createElement('h5')
 					scriptLine.innerHTML = txt
 					scriptLine.id = "scriptline"
+					scriptLine.className = "scriptline"
 					document.body.appendChild(scriptLine)
 					var newbutton = document.createElement('button')
 					newbutton.id = "copyButton"
 					newbutton.innerHTML = "Copy";
+					newbutton.className = "getbutton";
 					newbutton.addEventListener('click', () => {navigator.clipboard.writeText(txt)})
 					document.body.appendChild(newbutton)
 					return;
@@ -50,10 +85,12 @@
 					var scriptLine = document.createElement('h5')
 					scriptLine.innerHTML = txt
 					scriptLine.id = "scriptline"
+					scriptLine.className = "scriptline"
 					document.body.appendChild(scriptLine)
 					var newbutton = document.createElement('button')
 					newbutton.id = "copyButton"
 					newbutton.innerHTML = "Copy";
+					newbutton.className = "getbutton";
 					newbutton.addEventListener('click', () => {navigator.clipboard.writeText(txt)})
 					document.body.appendChild(newbutton)
 					return;
