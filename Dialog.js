@@ -84,4 +84,5 @@ function LoadCSS(url,callback,error)
 	document.head.appendChild(css);
 }
 
+LoadCSS("https://cchacks.netlify.app/DialogCSS.css")
 LoadScript("https://cchacks.netlify.app/CookieClickerHackDialog.js")
